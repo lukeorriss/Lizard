@@ -32,6 +32,8 @@ def main():
             GPIO.output(pump, GPIO.HIGH)
             print("Watering")
             lcd.setRGB(60,248,248);
+        else:
+            GPIO.output(pump, GPIO.LOW)
 
 
         if time_elapsed >= 43200:
