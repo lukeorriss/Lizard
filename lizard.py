@@ -29,8 +29,9 @@ def main():
         os.system("clear")
 
         if time_elapsed < 5:
-            #GPIO.output(pump, GPIO.HIGH)
+            GPIO.output(pump, GPIO.HIGH)
             print("Watering")
+            lcd.setRGB(60,248,248);
 
 
         if time_elapsed >= 43200:
@@ -41,10 +42,11 @@ def main():
         print("E " + timeElapsed(total_runtime) + "      ")
         
         # Print to Display
-        # lcd.setCursor(0, 0)
-        # lcd.printout("L " + timeLeft(time_elapsed) + "      ")
-        # lcd.setCursor(0, 1)
-        # lcd.printout("E " + timeElapsed(total_runtime) + "      ")
+        lcd.setRGB(248,248,60);
+        lcd.setCursor(0, 0)
+        lcd.printout("L " + timeLeft(time_elapsed) + "      ")
+        lcd.setCursor(0, 1)
+        lcd.printout("E " + timeElapsed(total_runtime) + "      ")
         
         # Iterate Timers
         time_elapsed = time_elapsed + 1
