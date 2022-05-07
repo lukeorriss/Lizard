@@ -22,7 +22,7 @@ def timeLeft(seconds):
     return str(datetime.timedelta(seconds=time_left))
 
 def main():
-    #GPIO.output(pump, GPIO.HIGH)
+    GPIO.output(pump, GPIO.HIGH)
     print("Watering")
     # lcd.setRGB(60,248,248);
     lcd.setRGB(255,0,0)
