@@ -46,7 +46,7 @@ def main():
         print("L " + timeLeft(time_elapsed) + "      ")
         print("E " + timeElapsed(total_runtime) + "      ")
         
-        now = datetime.now()
+        now = datetime.datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         # Print to Display
         # lcd.setRGB(248,248,60)
