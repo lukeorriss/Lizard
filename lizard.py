@@ -50,7 +50,7 @@ def main():
         lcd.setCursor(0, 1)
         lcd.printout(dt_string + "                 ")
 
-
+        exit()
 main()
 
 
