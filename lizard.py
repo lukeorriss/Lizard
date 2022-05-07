@@ -29,7 +29,7 @@ def main():
         os.system("clear")
 
         if time_elapsed < 5:
-            #GPIO.output(pump, GPIO.HIGH)
+            GPIO.output(pump, GPIO.HIGH)
             print("Watering")
             # lcd.setRGB(60,248,248);
             lcd.setRGB(255,0,0)
