@@ -20,37 +20,28 @@ def timeLeft(seconds):
     interval = 43200
     time_left = interval - seconds
     return str(datetime.timedelta(seconds=time_left))
-running = True
+
 def main():
+    GPIO.output(pump, GPIO.HIGH)
+    print("Watering")
+    # lcd.setRGB(60,248,248);
+    lcd.setRGB(255,0,0)
+    lcd.setCursor(0, 0)
+    lcd.printout("Watering...                 ")
+    time.sleep(5)
 
-    time_elapsed = 0
-    total_runtime = 0 
-    while running:
-        os.system("clear")
+    GPIO.output(pump, GPIO.LOW)
 
-        if time_elapsed < 5:
-            GPIO.output(pump, GPIO.HIGH)
-            print("Watering")
-            # lcd.setRGB(60,248,248);
-            lcd.setRGB(255,0,0)
-            lcd.setCursor(0, 0)
-            lcd.printout("Watering...                 ")
-            time.sleep(5)
-            time_elapsed = time_elapsed + 10
-        else:
-            GPIO.output(pump, GPIO.LOW)
+    now = datetime.datetime.now()
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    # Print to Display
+    # lcd.setRGB(248,248,60)
+    lcd.setCursor(0, 0)
+    lcd.printout("Last Watered:                ")
+    lcd.setCursor(0, 1)
+    lcd.printout(dt_string + "                 ")
 
-        now = datetime.datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-        # Print to Display
-        # lcd.setRGB(248,248,60)
-        lcd.setRGB(255,0,0)
-        lcd.setCursor(0, 0)
-        lcd.printout("Last Watered:                ")
-        lcd.setCursor(0, 1)
-        lcd.printout(dt_string + "                 ")
-
-        exit()
+    exit()
 main()
 
 
