@@ -35,31 +35,20 @@ def main():
             lcd.setRGB(255,0,0)
             lcd.setCursor(0, 0)
             lcd.printout("Watering...                 ")
+            time.sleep(5)
+            time_elapsed = time_elapsed + 10
         else:
             GPIO.output(pump, GPIO.LOW)
 
-
-        if time_elapsed > 5:
-            exit();
-
-        # Print to Terminal
-        print("L " + timeLeft(time_elapsed) + "      ")
-        print("E " + timeElapsed(total_runtime) + "      ")
-        
         now = datetime.datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         # Print to Display
         # lcd.setRGB(248,248,60)
         lcd.setRGB(255,0,0)
         lcd.setCursor(0, 0)
-        lcd.printout("Last Watered                 ")
+        lcd.printout("Last Watered:                ")
         lcd.setCursor(0, 1)
         lcd.printout(dt_string + "                 ")
-        
-        # Iterate Timers
-        time_elapsed = time_elapsed + 1
-        total_runtime = total_runtime + 1
-        time.sleep(1)
 
 
 main()
