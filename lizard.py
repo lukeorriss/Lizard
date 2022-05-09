@@ -28,7 +28,7 @@ def main():
     lcd.setRGB(255,0,0)
     lcd.setCursor(0, 0)
     lcd.printout("Watering...                 ")
-    time.sleep(5)
+    time.sleep(8)
 
     GPIO.output(pump, GPIO.LOW)
 
