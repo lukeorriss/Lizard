@@ -26,7 +26,7 @@ def timeLeft(seconds):
 
 def main():
     while True:
-        input_sate = GPIO.input(18)
+        input_sate = GPIO.input(5)
 
         if input_sate == False:
 
