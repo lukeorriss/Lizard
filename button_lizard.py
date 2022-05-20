@@ -38,16 +38,16 @@ def main():
             lcd.printout("Watering...                 ")
             time.sleep(8)
 
-        GPIO.output(pump, GPIO.LOW)
+            GPIO.output(pump, GPIO.LOW)
 
-        now = datetime.datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-        # Print to Display
-        # lcd.setRGB(248,248,60)
-        lcd.setCursor(0, 0)
-        lcd.printout("Last Watered:                ")
-        lcd.setCursor(0, 1)
-        lcd.printout(dt_string + "                 ")
+            now = datetime.datetime.now()
+            dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+            # Print to Display
+            # lcd.setRGB(248,248,60)
+            lcd.setCursor(0, 0)
+            lcd.printout("Last Watered:                ")
+            lcd.setCursor(0, 1)
+            lcd.printout(dt_string + "                 ")
 main()
 
 
