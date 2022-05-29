@@ -27,10 +27,13 @@ def timeLeft(seconds):
 def retry():
     main()
 def main():
+    lcd.setCursor(0, 0)
+    lcd.printout("Script Started            ")
+    time.sleep(3)
     try:
         while True:
             input_sate = GPIO.input(5)
-
+            
             if input_sate == False:
 
                 GPIO.output(pump, GPIO.HIGH)
@@ -54,7 +57,9 @@ def main():
     except OSError as e:
         lcd.setRGB(255,0,0)
         lcd.setCursor(0, 0)
-        lcd.printout(e)
+        lcd.printout("Error: OSError           ")
+        lcd.setCursor(0, 1)
+        lcd.printout("Restarting...")
         retry();
 main()
 
